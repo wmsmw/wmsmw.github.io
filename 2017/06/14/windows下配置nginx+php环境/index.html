@@ -6,14 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.ikidpro.cn">
-  <title>Hexo</title>
+  <title>windows下配置nginx+php环境 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://www.ikidpro.cn/index.html">
+  <meta name="description" content="刚看到nginx这个词，我很好奇它的读法（engine x），我的直译是“引擎x”，一般引“擎代”表了性能，而“x”大多出现是表示“xtras（额外的效果）”，那么整个词的意思就是类似“极致效果”，“额外性能”。当然这里不是要来唠嗑，以上是题外话。 　　nginx相较于我们熟悉的apache、IIS的优势，就我浅入浅出的了解，在于“反向代理”和“负载均衡”。因此考虑到能够为Web服务器节省资源，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="windows下配置nginx+php环境">
+<meta property="og:url" content="http://www.ikidpro.cn/2017/06/14/windows下配置nginx+php环境/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="刚看到nginx这个词，我很好奇它的读法（engine x），我的直译是“引擎x”，一般引“擎代”表了性能，而“x”大多出现是表示“xtras（额外的效果）”，那么整个词的意思就是类似“极致效果”，“额外性能”。当然这里不是要来唠嗑，以上是题外话。 　　nginx相较于我们熟悉的apache、IIS的优势，就我浅入浅出的了解，在于“反向代理”和“负载均衡”。因此考虑到能够为Web服务器节省资源，">
+<meta property="og:image" content="http://www.ikidpro.cn/2017/06/14/windows下配置nginx+php环境/1.jpg">
+<meta property="og:image" content="http://www.ikidpro.cn/2017/06/14/windows下配置nginx+php环境/2.jpg">
+<meta property="og:updated_time" content="2017-06-14T09:04:01.237Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="windows下配置nginx+php环境">
+<meta name="twitter:description" content="刚看到nginx这个词，我很好奇它的读法（engine x），我的直译是“引擎x”，一般引“擎代”表了性能，而“x”大多出现是表示“xtras（额外的效果）”，那么整个词的意思就是类似“极致效果”，“额外性能”。当然这里不是要来唠嗑，以上是题外话。 　　nginx相较于我们熟悉的apache、IIS的优势，就我浅入浅出的了解，在于“反向代理”和“负载均衡”。因此考虑到能够为Web服务器节省资源，">
+<meta name="twitter:image" content="http://www.ikidpro.cn/2017/06/14/windows下配置nginx+php环境/1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -147,16 +154,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-windows下配置nginx+php环境" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-windows下配置nginx+php环境" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/14/windows下配置nginx+php环境/">windows下配置nginx+php环境</a>
+    <h1 class="article-title" itemprop="name">
+      windows下配置nginx+php环境
     </h1>
   
 
@@ -190,60 +195,26 @@
       
 
       
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/14/windows下配置nginx+php环境/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/14/hello-world/">一念在茶，一念在心</a>
-    </h1>
-  
-
-        
-        <a href="/2017/06/14/hello-world/" class="archive-article-date">
-  	<time datetime="2017-06-14T00:45:24.330Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="在这样晴朗的日子里，静静地沏一杯茶。在云淡风轻的心境里，喝出茶芽的喜悦、回味的深沉，喝出来自土地的亲切味道，也喝出漫漫人生里，那些发酵的往事与看似沉重的负担。"><a href="#在这样晴朗的日子里，静静地沏一杯茶。在云淡风轻的心境里，喝出茶芽的喜悦、回味的深沉，喝出来自土地的亲切味道，也喝出漫漫人生里，那些发酵的往事与看似沉重的负担。" class="headerlink" title="在这样晴朗的日子里，静静地沏一杯茶。在云淡风轻的心境里，喝出茶芽的喜悦、回味的深沉，喝出来自土地的亲切味道，也喝出漫漫人生里，那些发酵的往事与看似沉重的负担。"></a>在这样晴朗的日子里，静静地沏一杯茶。在云淡风轻的心境里，喝出茶芽的喜悦、回味的深沉，喝出来自土地的亲切味道，也喝出漫漫人生里，那些发酵的往事与看似沉重的负担。</h4><p>一直以为，茶是最经典的植物，生于青山，长于幽谷，结庐林间，饮尽山灵水秀，蕴满人间风情。也一直以为，女人如茶，每个女人都是不同的茶，都有着各自不同的故事和不同的茶的味道。</p>
-<p>品味不同的茶，就像品味不同的女人，让人在拥有天下秀色一览无余的潇洒与愉悦的同时，也拥有顿悟之后的无奈与伤感。永远保持一份不变的美丽，犹如经过千锤百炼依然美丽诱人的精品女人，惯看秋月春风，炼就“宠辱不惊，闲看庭前花开花落；去留无意，漫随天外云卷云舒”的从容与淡定。</p>
-<p>如茶的女人，任凭时间流逝，岁月老去，心灵却永远纯洁如初、美丽如初。在她的身上，你不会看到磨难后的消沉和沮丧，只看到她自立自信优雅中的坚韧，精明豁达又不失温婉中的万种风情。这样的女人，美丽着不为了吸引谁，芬芳着不为了诱惑谁，欢笑着不为了取悦谁。</p>
-<p>品茶越久，心态好了，茶香就更浓了。手捧一杯茶，总会想到你，和对的人一起喝，清水煮茶，看壶中的茶叶翻滚，茶汤慢慢地变浓，杯盏在茶水浸润下，慢慢变温热，喝着喝着，又慢慢变淡，平淡而知味。这种润滑而温和的气息，让人觉得妥帖、舒畅，最是教人迷恋，即使不说话，就这样静静地喝，也足矣。</p>
-<p>找个安静有情调的地方小憩，舒服的喝杯茶，这个时候发现，原来我们要求的并不多，幸福有时候一杯茶就能给予。</p>
-<p>人世无常。岁月里总是点缀着一些分分合合的愁绪，掺杂着一些莫名的无助与伤感。所以总是感觉孤寂，感觉无助，感觉清冷。一直希望给心灵修筑一座城堡，让自己的灵魂有一个安静栖息的场所。</p>
-<p>捧一杯茶，秉承从容静好，与光阴把盏，与温暖言欢，亦不骄，不躁。万般情事，诸多悲喜，不过是岁月湍急中一渺小沙砾，无需牵强，不必苛求。</p>
-<p>也是这一刻的安静，让人更珍惜这一刻的时间和人生，像在一个循环里，如茶的轮回。杯中的茶由淡变浓，浮浮沉沉，聚聚散散，在每次喝茶过程中，内心都会平静地对待，用心泡，认真喝。</p>
-
-      
-
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢支持<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -252,22 +223,141 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/14/hello-world/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://www.ikidpro.cn/2017/06/14/windows下配置nginx+php环境/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
 
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2017/06/14/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">一念在茶，一念在心</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 
 
 
   
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="windows下配置nginx+php环境" data-title="windows下配置nginx+php环境" data-url="http://www.ikidpro.cn/2017/06/14/windows下配置nginx+php环境/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+  
+  
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://www.ikidpro.cn/2017/06/14/windows下配置nginx+php环境/", 
+    sourceId: "windows下配置nginx+php环境",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+  
+  <div id="SOHUCS" sid="windows下配置nginx+php环境" ></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = "true"; 
+var conf = "true"; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("//changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+  
+
+  
+    <section id="comments">
+      <div id="disqus_thread"></div>
+        <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'true'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
   
 
 
@@ -290,8 +380,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
